@@ -1820,10 +1820,11 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #20e979;
+  background: #da2675;
 }
 .links-of-blogroll {
   font-size: 13px;
+  text-align: center;
 }
 .links-of-blogroll-title {
   margin-top: 20px;
@@ -1906,7 +1907,6 @@ pre .javascript .function {
 .post-toc .nav-item {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {

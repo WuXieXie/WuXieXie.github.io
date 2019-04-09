@@ -110,15 +110,15 @@
   <meta name="description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
 <meta name="keywords" content="Laravel,PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel常用知识">
-<meta property="og:url" content="http://localhost:4000/2019/04/09/Laravel常用知识/index.html">
+<meta property="og:title" content="Laravel基础知识">
+<meta property="og:url" content="http://localhost:4000/2019/04/09/Laravel基础知识/index.html">
 <meta property="og:site_name" content="无邪&#39;s 博客">
 <meta property="og:description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/04/09/5cabe977a04ec.png">
-<meta property="og:updated_time" content="2019-04-09T03:24:22.486Z">
+<meta property="og:updated_time" content="2019-04-09T04:22:03.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel常用知识">
+<meta name="twitter:title" content="Laravel基础知识">
 <meta name="twitter:description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
 <meta name="twitter:image" content="https://i.loli.net/2019/04/09/5cabe977a04ec.png">
 
@@ -130,7 +130,7 @@
 
   
   
-  <link rel="canonical" href="http://localhost:4000/2019/04/09/Laravel常用知识/">
+  <link rel="canonical" href="http://localhost:4000/2019/04/09/Laravel基础知识/">
 
 
 
@@ -140,7 +140,7 @@
   };
 </script>
 
-  <title>Laravel常用知识 | 无邪's 博客</title>
+  <title>Laravel基础知识 | 无邪's 博客</title>
   
 
 
@@ -372,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2019/04/09/Laravel常用知识/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2019/04/09/Laravel基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无邪">
@@ -389,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Laravel常用知识
+          <h1 class="post-title" itemprop="name headline">Laravel基础知识
 
               
             
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-04-09 06:43:17 / 修改时间：11:24:22" itemprop="dateCreated datePublished" datetime="2019-04-09T06:43:17+08:00">2019-04-09</time>
+              <time title="创建时间：2019-04-09 06:43:17 / 修改时间：12:22:03" itemprop="dateCreated datePublished" datetime="2019-04-09T06:43:17+08:00">2019-04-09</time>
             
 
             
@@ -456,8 +456,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/Laravel常用知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/Laravel常用知识/" itemprop="commentCount"></span>
+                <a href="/2019/04/09/Laravel基础知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/Laravel基础知识/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -479,7 +479,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">601</span>
+                <span title="本文字数">847</span>
               
 
               
@@ -532,6 +532,14 @@
 </li>
 <li>确认安装情况<br>打开命令提示符，输入命令 <code>composer -v</code><br>看到如图则代表安装成功<br><img src="https://i.loli.net/2019/04/09/5cabe977a04ec.png" alt="Composer"></li>
 </ol>
+<h1 id="安装-Laravel"><a href="#安装-Laravel" class="headerlink" title="安装 Laravel"></a>安装 Laravel</h1><h2 id="创建指定版本的Laravel项目"><a href="#创建指定版本的Laravel项目" class="headerlink" title="创建指定版本的Laravel项目"></a>创建指定版本的Laravel项目</h2><p>在要创建Laravel项目的目录下运行cmd或cd至创建目录下<br>例：创建一个版本为5.4的blog项目，使用以下命令<br><code>composer create-project --prefer-dist laravel/laravel blog 5.4.*</code></p>
+<h1 id="常用的文件目录"><a href="#常用的文件目录" class="headerlink" title="常用的文件目录"></a>常用的文件目录</h1><ul>
+<li>配置文件：<code>/.env</code></li>
+<li>css、Js：<code>/public/</code></li>
+<li>路由：<code>/routes/</code></li>
+<li>控制器： <code>/app/Http/Controllers/</code></li>
+<li>视图： <code>/resources/views/</code></li>
+</ul>
 
       
     </div>
@@ -789,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-简介"><span class="nav-number">1.</span> <span class="nav-text">Laravel 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本选择"><span class="nav-number">2.</span> <span class="nav-text">版本选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境要求"><span class="nav-number">3.</span> <span class="nav-text">环境要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">4.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP环境"><span class="nav-number">4.1.</span> <span class="nav-text">PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer安装"><span class="nav-number">4.2.</span> <span class="nav-text">Composer安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-简介"><span class="nav-number">1.</span> <span class="nav-text">Laravel 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本选择"><span class="nav-number">2.</span> <span class="nav-text">版本选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境要求"><span class="nav-number">3.</span> <span class="nav-text">环境要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">4.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP环境"><span class="nav-number">4.1.</span> <span class="nav-text">PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer安装"><span class="nav-number">4.2.</span> <span class="nav-text">Composer安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Laravel"><span class="nav-number">5.</span> <span class="nav-text">安装 Laravel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建指定版本的Laravel项目"><span class="nav-number">5.1.</span> <span class="nav-text">创建指定版本的Laravel项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的文件目录"><span class="nav-number">6.</span> <span class="nav-text">常用的文件目录</span></a></li></ol></div>
             
 
           </div>

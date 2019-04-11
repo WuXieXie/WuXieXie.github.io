@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="这篇文章是因为前段时间接到了一个360的电面接到电话的时候其实是异常开心的然后电面完就开始自闭了深刻认识到自己的知识储备的不足因此萌生了增强自身能力和知识储备的想法也在博客中进行一些记录 此博文仅作部分基础知识的拓展可能以后想到了更多内容也会进行更新主要会分为以下几个内容来浅入各方面的知识  网路知识 Linux PHP Python  网路知识由于开发岗位对网络的要求并不那么高，所以在此只作粗略">
+<meta name="keywords" content="PHP,面试,Python,网络知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发岗面试题知识">
+<meta property="og:url" content="http://wuxiexie.github.io/2019/04/11/开发岗面试题知识/index.html">
+<meta property="og:site_name" content="无邪&#39;s 博客">
+<meta property="og:description" content="这篇文章是因为前段时间接到了一个360的电面接到电话的时候其实是异常开心的然后电面完就开始自闭了深刻认识到自己的知识储备的不足因此萌生了增强自身能力和知识储备的想法也在博客中进行一些记录 此博文仅作部分基础知识的拓展可能以后想到了更多内容也会进行更新主要会分为以下几个内容来浅入各方面的知识  网路知识 Linux PHP Python  网路知识由于开发岗位对网络的要求并不那么高，所以在此只作粗略">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caf36153f1c3.png">
+<meta property="og:updated_time" content="2019-04-11T14:22:43.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开发岗面试题知识">
+<meta name="twitter:description" content="这篇文章是因为前段时间接到了一个360的电面接到电话的时候其实是异常开心的然后电面完就开始自闭了深刻认识到自己的知识储备的不足因此萌生了增强自身能力和知识储备的想法也在博客中进行一些记录 此博文仅作部分基础知识的拓展可能以后想到了更多内容也会进行更新主要会分为以下几个内容来浅入各方面的知识  网路知识 Linux PHP Python  网路知识由于开发岗位对网络的要求并不那么高，所以在此只作粗略">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/11/5caf36153f1c3.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="无邪's 博客" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://wuxiexie.github.io/2019/04/11/开发岗面试题知识/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>开发岗面试题知识 | 无邪's 博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">无邪's 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">此处出现一个菜逼</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wuxiexie.github.io/2019/04/11/开发岗面试题知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="无邪">
+      <meta itemprop="description" content="一条酸菜鱼，又酸又菜又多余">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无邪's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">开发岗面试题知识
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-11 18:04:35 / 修改时间：22:22:43" itemprop="dateCreated datePublished" datetime="2019-04-11T18:04:35+08:00">2019-04-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/PHP/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/11/开发岗面试题知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/开发岗面试题知识/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章是因为前段时间接到了一个360的电面<br>接到电话的时候其实是异常开心的<br>然后电面完就开始自闭了<br>深刻认识到自己的知识储备的不足<br>因此萌生了增强自身能力和知识储备的想法<br>也在博客中进行一些记录</p>
+<p>此博文仅作部分基础知识的拓展<br>可能以后想到了更多内容也会进行更新<br>主要会分为以下几个内容来浅入各方面的知识</p>
+<ul>
+<li>网路知识</li>
+<li>Linux</li>
+<li>PHP</li>
+<li>Python</li>
+</ul>
+<h1 id="网路知识"><a href="#网路知识" class="headerlink" title="网路知识"></a>网路知识</h1><p>由于开发岗位对网络的要求并不那么高，所以在此只作粗略的内容阐述</p>
+<h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h3><blockquote>
+<p>主要是为了防止已经失效的连接请求报文突然又传送到了服务器，从而产生错误。</p>
+</blockquote>
+<h3 id="三次握手建立连接的过程"><a href="#三次握手建立连接的过程" class="headerlink" title="三次握手建立连接的过程"></a>三次握手建立连接的过程</h3><ol>
+<li>第一次握手：客户端发送包至服务器，等待服务器确认</li>
+<li>第二次握手：服务器收到包，确认客户端请求，同时发送一个包至客户端并进入Recv状态</li>
+<li>第三次握手：客户端收到服务器的包，并向服务器发送确认包，发送完毕后，客户端和服务端进入连接状态，完成三次握手。<blockquote>
+<p>三次握手完成后，在理想状态下，TCP连接一旦建立，在通信双方中的任何一方主动关闭连接之前，TCP连接都将被一直保持。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="浏览器从输入URL到页面展示过程中发生了什么？"><a href="#浏览器从输入URL到页面展示过程中发生了什么？" class="headerlink" title="浏览器从输入URL到页面展示过程中发生了什么？"></a>浏览器从输入URL到页面展示过程中发生了什么？</h2><blockquote>
+<p>在浏览器地址栏输入URL到页面展示过程大致分为以下阶段：</p>
+<ol>
+<li>域名解析（找到该域名所对应的IP地址）</li>
+<li>服务器处理（找到该域名的网站）</li>
+<li>网站处理（找到该域名所对应的文件）</li>
+<li>浏览器处理（把文件返回浏览器）</li>
+</ol>
+</blockquote>
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>有注册过域名的同学一定知道域名需要云解析DNS配置<br>这就引出了DNS域名系统这个概念<br>DNS是域名和IP地址对应的映射表<br>用于解析域名的IP地址<br>通过DNS服务器后，我们所输入的地址就变成了IP地址从而进行下一步的访问<br>例如：我们输入<a href="http://www.baidu.com的时候" target="_blank" rel="noopener">www.baidu.com的时候</a><br>从DNS服务器中最先找到的IP地址115.239.211.112<br>当然，这些大型站点通常都有CDN服务，这些找到的IP也并非服务器真实地址</p>
+<h2 id="服务器处理"><a href="#服务器处理" class="headerlink" title="服务器处理"></a>服务器处理</h2><p>当我们从DNS服务器中找到IP时，我们就会请求服务器<br>服务器是一台安装了系统的机器，常见的系统有Linux和Windows Server<br>目前服务器使用的还是以Linux为主<br>系统中安装有处理请求的Web Server<br>常见的Web Server有Apache、Nginx、IIS<br>PHP通常使用的是Apache<br>通常情况下一个服务器下会部属多个网站<br>Web Server接收用户的请求并且根据请求的域名找到其对应的网站，然后把用户的请求交给该网站的代码进行处理</p>
+<h2 id="网站处理"><a href="#网站处理" class="headerlink" title="网站处理"></a>网站处理</h2><p>现在的网站很多都是使用MVC框架来进行处理的<br>无论使用的是什么框架进行处理<br>网站处理其实经过的流程都是一致的<br><img src="https://i.loli.net/2019/04/11/5caf36153f1c3.png" alt="处理过程"><br>在处理客户端请求时，我们可能会对请求中的参数进行分析<br>连接数据库获取我们需要的内容并且通过某个编程语言来进行解释<br>从而最终返回我们预期返回的内容(例如Json、Html)</p>
+<h2 id="浏览器处理"><a href="#浏览器处理" class="headerlink" title="浏览器处理"></a>浏览器处理</h2><p>浏览器处理的过程是一个边解析边渲染的过程<br>例如我们的网站使用的是PHP语言<br>我们在网站处理的过程中已经执行完毕了处理过程<br>最终返回的是一个HTML文档又或者是一个Json<br>浏览器处理时也有可能是直接载入Html文档或者执行js代码来分析Json从而使用<br>浏览器会载入我们所引入的css，js文件并且最终将结果展现至客户端的浏览器上</p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="什么是Linux？"><a href="#什么是Linux？" class="headerlink" title="什么是Linux？"></a>什么是Linux？</h2><blockquote>
+<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。<br>—— <a href="https://baike.baidu.com/item/linux/27050" target="_blank" rel="noopener">百度百科</a></p>
+</blockquote>
+<p>Linux系统因为其更加可靠的系统安全性等多方面原因，成为越来越流行的网站服务器<br>因此作为一个开发也需要了解一些Linux知识</p>
+<h2 id="什么是LAMP？"><a href="#什么是LAMP？" class="headerlink" title="什么是LAMP？"></a>什么是LAMP？</h2><p>LAMP分别是</p>
+<ul>
+<li>L：Linux</li>
+<li>A：Apache</li>
+<li>M：Mysql（数据库）</li>
+<li>P：PHP、Python（脚本语言）</li>
+</ul>
+<h2 id="如何部署LAMP环境"><a href="#如何部署LAMP环境" class="headerlink" title="如何部署LAMP环境"></a>如何部署LAMP环境</h2><p>LAMP环境的部署现在有很多方式<br>本文讲个人认为最简单的一种方式：<a href="http://www.bt.cn/" target="_blank" rel="noopener">Linux宝塔面板</a><br>宝塔面板从安装和管理上都较为方便，作为我这样的菜逼还是比较容易上手的</p>
+<h2 id="Linux的基础指令和功能"><a href="#Linux的基础指令和功能" class="headerlink" title="Linux的基础指令和功能"></a>Linux的基础指令和功能</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>list之意，用于查看文件和目录</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>查找内容包含指定文本的文件</td>
+</tr>
+<tr>
+<td>find</td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>copy之意，复制文件和目录</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>move之意，移动文件和目录</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>remove之意，删除文件和目录</td>
+</tr>
+<tr>
+<td>file</td>
+<td>辨识文件类型</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>常用于备份，可用来压缩和解压文件</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>查看文本文件内容</td>
+</tr>
+<tr>
+<td>vim</td>
+<td>编辑文本文件内容</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>查看当前路径</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>创建文件夹</td>
+</tr>
+</tbody>
+</table>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><h2 id="PHP是什么？"><a href="#PHP是什么？" class="headerlink" title="PHP是什么？"></a>PHP是什么？</h2><p>PHP 是一种创建动态交互性站点的强有力的服务器端脚本语言。<br>PHP 是免费的，并且使用非常广泛。同时，对于像微软 ASP 这样的竞争者来说，PHP 无疑是另一种高效率的选项。</p>
+<h2 id="PHP常见的开发框架"><a href="#PHP常见的开发框架" class="headerlink" title="PHP常见的开发框架"></a>PHP常见的开发框架</h2><p>PHP常见的框架主要有：</p>
+<ul>
+<li>ThinkPHP</li>
+<li>Yii</li>
+<li>Zend Framework</li>
+<li>Laravel</li>
+</ul>
+<p>本文主要讲一下Laravel框架<br>Laravel框架是一个优雅、简洁的PHP WEB框架。<br>Laravel使用的是MVC的设计模式<br>在博客中也写了一些基础知识，可以在另一篇博文[Laravel基础知识]中查看</p>
+<h2 id="PHP5-和-PHP7"><a href="#PHP5-和-PHP7" class="headerlink" title="PHP5 和 PHP7"></a>PHP5 和 PHP7</h2><p>这个也是我电面中被提及的一个问题<br>就我所知PHP7和PHP5相比<br>在性能上有十分大的提升<br>通过查询相关知识得知PHP7相较于PHP5性能提升有以下原因：</p>
+<ol>
+<li>变量存储字节减小，减少内存占用，提升变量操作速度</li>
+<li>改善数组结构，数组元素和hash映射表被分配在同一块内存里，降低了内存占用、提升了 cpu 缓存命中率</li>
+<li>改进了函数的调用机制，通过优化参数传递的环节，减少了一些指令，提高执行效率</li>
+</ol>
+<p>不过对于我这种菜鸡而言，只需要知道它提升了就好，便也没有深究其中的缘由</p>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python"></a>什么是Python</h2><blockquote>
+<p>Python是一种计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发。 ——<a href="https://baike.baidu.com/item/Python/407313" target="_blank" rel="noopener">百度百科</a></p>
+</blockquote>
+<p>Python在现如今无论是在Web还是在脚本或者其他方面的表现都是十分的优秀<br>因此现在的需求也是越来越大的，从某个程度上也减少了PHP的市场需求</p>
+<p>Python是一种强类型语言还是弱类型语言<br>其实一开始并不了解强弱类型的语言区别<br>一开始以为，嗯，Python不需要定义变量类型，那么它应该是一个弱类型语言吧<br>其实强类型弱类型语言只需了解以下知识便可区分：<br>强类型：不予许不同类型相加</p>
+<blockquote>
+<p>例如：我们将字符串’1’将数字1相加<br>弱类型语言会输出结果<br>而强类型语言则会报typeerror的错误</p>
+</blockquote>
+<p>因此Python是一种强类型的动态脚本语言</p>
+<h2 id="Python的变量类型"><a href="#Python的变量类型" class="headerlink" title="Python的变量类型"></a>Python的变量类型</h2><p>Python中，基本数据类型可以分为以下几种：</p>
+<ul>
+<li>数字</li>
+<li>字符串</li>
+<li>列表</li>
+<li>字典</li>
+<li>集合</li>
+<li>元祖<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3>Python3中支持的数字类型有</li>
+<li>int-整型</li>
+<li>float-浮点型</li>
+<li>bool-布尔型</li>
+<li>fractions-分数</li>
+<li>complex-复数</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串是由数字、字母、下划线组成的一串字符<br>例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"abc"</span></span><br></pre></td></tr></table></figure></p>
+<p>则我们定义了一个名字为str的变量，其值为abc123456<br>字符串支持多种截取和处理方式<br>例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">print(str)           <span class="comment">#输出字符串</span></span><br><span class="line">&gt;abc123456</span><br><span class="line">print(str[<span class="number">0</span>:<span class="number">-1</span>])     <span class="comment">#输出第一个到倒数第二个的所有字符</span></span><br><span class="line">&gt;abc12345</span><br><span class="line"><span class="keyword">print</span> (str[<span class="number">0</span>])       <span class="comment"># 输出字符串第一个字符</span></span><br><span class="line">&gt;a</span><br><span class="line"><span class="keyword">print</span> (str[<span class="number">2</span>:<span class="number">5</span>])     <span class="comment"># 输出从第三个开始到第五个的字符</span></span><br><span class="line">&gt;c12</span><br><span class="line"><span class="keyword">print</span> (str[<span class="number">2</span>:])      <span class="comment"># 输出从第三个开始的后的所有字符</span></span><br><span class="line">&gt;c12345</span><br><span class="line"><span class="keyword">print</span> (str * <span class="number">2</span>)      <span class="comment"># 输出字符串两次</span></span><br><span class="line">&gt;abc123456abc123456</span><br><span class="line"><span class="keyword">print</span> (str + <span class="string">"789"</span>) <span class="comment"># 连接字符串</span></span><br><span class="line">&gt;abc123456789</span><br></pre></td></tr></table></figure></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>List（列表） 是 Python 中使用最频繁的数据类型。<br>列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。<br>列表是写在方括号 [] 之间、用逗号分隔开的元素列表。<br>和字符串一样，列表同样可以被<strong>索引</strong>和截取，列表被截取后返回一个包含所需元素的新列表。<br>列表截取的语法格式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">list = [<span class="string">'abc'</span>, <span class="number">123</span> , <span class="number">1.23</span>, <span class="string">'Wuxie'</span>]</span><br><span class="line">tinylist = [<span class="number">456</span>, <span class="string">'Wuxie'</span>]</span><br><span class="line"><span class="keyword">print</span> (list)            <span class="comment"># 输出完整列表</span></span><br><span class="line">&gt;[<span class="string">'abc'</span>, <span class="number">123</span> , <span class="number">1.23</span>, <span class="string">'Wuxie'</span>]</span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">0</span>])         <span class="comment"># 输出列表第一个元素</span></span><br><span class="line">&gt;abc</span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">1</span>:<span class="number">3</span>])       <span class="comment"># 从第二个开始输出到第三个元素</span></span><br><span class="line">&gt;[<span class="number">123</span>, <span class="number">1.23</span>]</span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">2</span>:])        <span class="comment"># 输出从第三个元素开始的所有元素</span></span><br><span class="line">&gt;[<span class="number">123</span> , <span class="number">1.23</span>, <span class="string">'Wuxie'</span>]</span><br><span class="line"><span class="keyword">print</span> (tinylist * <span class="number">2</span>)    <span class="comment"># 输出两次列表</span></span><br><span class="line">&gt;[<span class="number">456</span>, <span class="string">'Wuxie'</span>, <span class="number">456</span>, <span class="string">'Wuxie'</span>]</span><br><span class="line"><span class="keyword">print</span> (list + tinylist) <span class="comment"># 连接列表</span></span><br><span class="line">&gt;[<span class="string">'abc'</span>, <span class="number">123</span> , <span class="number">1.23</span>, <span class="string">'Wuxie'</span>, <span class="number">456</span>, <span class="string">'Wuxie'</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组（tuple）与列表类似，不同之处在于元组的元素不能修改。<br>元组可以用()进行创建<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tuple = (<span class="string">'abc'</span>, <span class="number">123</span>)</span><br></pre></td></tr></table></figure></p>
+<p>和字符串以及列表一样<br>元组的内容是可以通过<strong>索引</strong>读取的，下标从0开始，-1为从末尾开始的位置</p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>集合（set）是由一个或数个形态各异的大小整体组成的，构成集合的事物或对象称作元素或是成员。<br>基本功能是进行成员关系测试和删除重复元素。<br>可以使用大括号 { } 或者 set() 函数创建集合<br>注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。<br>创建格式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parame = &#123;value1,value2,...&#125;</span><br><span class="line">parame = set()</span><br></pre></td></tr></table></figure></p>
+<p>集合可以计算差集、并集和交集<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">student = &#123;<span class="string">'Tom'</span>, <span class="string">'Jim'</span>, <span class="string">'Mary'</span>, <span class="string">'Tom'</span>, <span class="string">'Jack'</span>, <span class="string">'Rose'</span>&#125;</span><br><span class="line">print(student)   <span class="comment"># 输出集合，重复的元素被自动去掉</span></span><br><span class="line">&gt;&#123;<span class="string">'Jim'</span>, <span class="string">'Rose'</span>, <span class="string">'Mary'</span>, <span class="string">'Tom'</span>, <span class="string">'Jack'</span>&#125;</span><br><span class="line"><span class="comment"># set可以进行集合运算</span></span><br><span class="line">a = set(<span class="string">'abracadabra'</span>)</span><br><span class="line">b = set(<span class="string">'alacazam'</span>)</span><br><span class="line">print(a)</span><br><span class="line">&gt;&#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>&#125;</span><br><span class="line">print(b)</span><br><span class="line">&gt;&#123;<span class="string">'a'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>, <span class="string">'c'</span>, <span class="string">'m'</span>&#125;</span><br><span class="line">print(a - b)     <span class="comment"># a 和 b 的差集</span></span><br><span class="line">&gt;&#123;<span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'r'</span>&#125;</span><br><span class="line">print(a | b)     <span class="comment"># a 和 b 的并集</span></span><br><span class="line">&gt;&#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'r'</span>, <span class="string">'z'</span>, <span class="string">'d'</span>, <span class="string">'l'</span>, <span class="string">'c'</span>, <span class="string">'m'</span>&#125;</span><br><span class="line">print(a &amp; b)     <span class="comment"># a 和 b 的交集</span></span><br><span class="line">&gt;&#123;<span class="string">'a'</span>, <span class="string">'c'</span>&#125;</span><br><span class="line">print(a ^ b)     <span class="comment"># a 和 b 中不同时存在的元素(对称差)</span></span><br><span class="line">&gt;&#123;<span class="string">'b'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'r'</span>, <span class="string">'z'</span>, <span class="string">'m'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>例如我们当前有一个集合 s<br>我们可以使用以下语法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.add()</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.update()</span><br></pre></td></tr></table></figure></p>
+<h3 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h3><p>将元素从集合 s 中移除，如果元素不存在，则会发生错误。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.remove()</span><br></pre></td></tr></table></figure></p>
+<p>或者随机删除一个元素(挑选一位幸运观众)并且返回删除的元素内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.pop()</span><br></pre></td></tr></table></figure></p>
+<h3 id="计算元素个数"><a href="#计算元素个数" class="headerlink" title="计算元素个数"></a>计算元素个数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(s)</span><br></pre></td></tr></table></figure>
+<h3 id="清空集合"><a href="#清空集合" class="headerlink" title="清空集合"></a>清空集合</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.clear()</span><br></pre></td></tr></table></figure>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>字典（dictionary）是Python中另一个非常有用的内置数据类型。<br>列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。<br>字典是一种映射类型，字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。<br>键(key)必须使用不可变类型。<br>在同一个字典中，键(key)必须是唯一的。<br>例如我们创建一个字典 dict<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#125;</span><br><span class="line">dict[<span class="number">0</span>] = <span class="string">"0的内容"</span></span><br><span class="line">dict[<span class="string">'zero'</span>] = <span class="string">"zero的内容"</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里需要注意的是，dict[0]中的0并不是索引下标，而是作为key进行存储</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(dict[<span class="number">0</span>])        <span class="comment">#此处输出的是key为字典dict中key为0的value值</span></span><br><span class="line">&gt;<span class="number">0</span>的内容</span><br><span class="line">print(dict.keys())      <span class="comment">#输出所有键</span></span><br><span class="line">&gt;dict_keys([<span class="number">0</span>, <span class="string">'zero'</span>])</span><br><span class="line">print(dict.values())    <span class="comment">#输出所有值</span></span><br><span class="line">&gt;dict_values([<span class="string">'0的内容'</span>, <span class="string">'zero的内容'</span>])</span><br></pre></td></tr></table></figure>
+<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h2><p>在Python3中 可以使用下标来查看内容的有以下几种数据类型</p>
+<ol>
+<li>字符串</li>
+<li>列表</li>
+<li>元组(亦可以理解为数组)</li>
+</ol>
+<h1 id="常用的技术论坛"><a href="#常用的技术论坛" class="headerlink" title="常用的技术论坛"></a>常用的技术论坛</h1><ul>
+<li><a href="https://bbs.csdn.net/" target="_blank" rel="noopener">CSDN</a></li>
+<li><a href="https://www.v2ex.com/" target="_blank" rel="noopener">V2EX</a></li>
+<li><a href="https://github.com/" target="_blank" rel="noopener">github</a></li>
+<li><a href="http://www.w3school.com.cn" target="_blank" rel="noopener">W3CSchool</a></li>
+<li><a href="http://www.runoob.com/" target="_blank" rel="noopener">菜鸟教程</a></li>
+<li>……</li>
+</ul>
+<h1 id="全篇总结"><a href="#全篇总结" class="headerlink" title="全篇总结"></a>全篇总结</h1><p>人总归是要进步的<br>虽然我现在还是个菜逼<br>但我以后也可能就是一个大菜逼了<br>菜逼一时爽，一直菜逼一直爽</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>无邪</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://wuxiexie.github.io/2019/04/11/开发岗面试题知识/" title="开发岗面试题知识">http://wuxiexie.github.io/2019/04/11/开发岗面试题知识/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/网络知识/" rel="tag"># 网络知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/10/BiliBiliApi/" rel="next" title="BiliBiliApi">
+                <i class="fa fa-chevron-left"></i> BiliBiliApi
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="无邪">
+            
+              <p class="site-author-name" itemprop="name">无邪</p>
+              <div class="site-description motion-element" itemprop="description">一条酸菜鱼，又酸又菜又多余</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/WuXieXie" title="GitHub &rarr; https://github.com/WuXieXie" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1918181716@qq.com" title="E-Mail &rarr; mailto:1918181716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/u/5928423581" title="微博 &rarr; https://weibo.com/u/5928423581" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>微博</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://t.me/WuXieXie" title="Telegram &rarr; https://t.me/WuXieXie" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.forgiveher.cn/" title="https://blog.forgiveher.cn/" rel="noopener" target="_blank">当然是选择原谅她</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.changwei.me/" title="https://blog.changwei.me/" rel="noopener" target="_blank">昌维's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网路知识"><span class="nav-number">1.</span> <span class="nav-text">网路知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手"><span class="nav-number">1.1.</span> <span class="nav-text">TCP三次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要三次握手"><span class="nav-number">1.1.1.</span> <span class="nav-text">为什么要三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手建立连接的过程"><span class="nav-number">1.1.2.</span> <span class="nav-text">三次握手建立连接的过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器从输入URL到页面展示过程中发生了什么？"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器从输入URL到页面展示过程中发生了什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析"><span class="nav-number">1.3.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器处理"><span class="nav-number">1.4.</span> <span class="nav-text">服务器处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站处理"><span class="nav-number">1.5.</span> <span class="nav-text">网站处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器处理"><span class="nav-number">1.6.</span> <span class="nav-text">浏览器处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">2.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Linux？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是Linux？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是LAMP？"><span class="nav-number">2.2.</span> <span class="nav-text">什么是LAMP？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何部署LAMP环境"><span class="nav-number">2.3.</span> <span class="nav-text">如何部署LAMP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux的基础指令和功能"><span class="nav-number">2.4.</span> <span class="nav-text">Linux的基础指令和功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP"><span class="nav-number">3.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP是什么？"><span class="nav-number">3.1.</span> <span class="nav-text">PHP是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP常见的开发框架"><span class="nav-number">3.2.</span> <span class="nav-text">PHP常见的开发框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP5-和-PHP7"><span class="nav-number">3.3.</span> <span class="nav-text">PHP5 和 PHP7</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">4.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Python"><span class="nav-number">4.1.</span> <span class="nav-text">什么是Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的变量类型"><span class="nav-number">4.2.</span> <span class="nav-text">Python的变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">4.2.1.</span> <span class="nav-text">数字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">4.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">4.4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组"><span class="nav-number">4.5.</span> <span class="nav-text">元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">4.6.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加元素"><span class="nav-number">4.6.1.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除元素"><span class="nav-number">4.6.2.</span> <span class="nav-text">移除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算元素个数"><span class="nav-number">4.6.3.</span> <span class="nav-text">计算元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清空集合"><span class="nav-number">4.6.4.</span> <span class="nav-text">清空集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">4.7.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人总结"><span class="nav-number">4.8.</span> <span class="nav-text">个人总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的技术论坛"><span class="nav-number">5.</span> <span class="nav-text">常用的技术论坛</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全篇总结"><span class="nav-number">6.</span> <span class="nav-text">全篇总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">无邪</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">11k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">10 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'ovIKynbni4DAkAl14drkYaoC-gzGzoHsz',
+    appKey: 'Qi7k4d4EnlOp20LbNjYYl5NR',
+    placeholder: '快来一起玩耍吧~',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

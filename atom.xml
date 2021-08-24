@@ -96,9 +96,9 @@
     
       <category term="Laravel" scheme="http://wuxiexie.github.io/tags/Laravel/"/>
     
-      <category term="PHP" scheme="http://wuxiexie.github.io/tags/PHP/"/>
-    
       <category term="Redis" scheme="http://wuxiexie.github.io/tags/Redis/"/>
+    
+      <category term="PHP" scheme="http://wuxiexie.github.io/tags/PHP/"/>
     
   </entry>
   

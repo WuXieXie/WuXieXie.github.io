@@ -107,20 +107,18 @@
 
 
 
-  <meta name="description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
-<meta name="keywords" content="Laravel,PHP">
+  <meta name="description" content="Redis是什么 redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种">
+<meta name="keywords" content="Laravel,Redis,PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel基础知识">
-<meta property="og:url" content="http://wuxiexie.github.io/Laravel-Basic">
+<meta property="og:title" content="Laravel中Redis相关操作">
+<meta property="og:url" content="http://wuxiexie.github.io/2019/04/24/Laravel-Redis">
 <meta property="og:site_name" content="无邪&#39;s 博客">
-<meta property="og:description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
+<meta property="og:description" content="Redis是什么 redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2019/04/09/5cabe977a04ec.png">
-<meta property="og:updated_time" content="2021-08-24T04:12:18.977Z">
+<meta property="og:updated_time" content="2021-08-24T04:12:33.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel基础知识">
-<meta name="twitter:description" content="Laravel 简介Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。Laravel也是目前最为主流的PHP框架点我进入百度百科 版本选择俗话说：男怕选错行，女怕嫁错郎。一个程序的版本选择也一样决定命运当前笔记以 Laravel 5.4 为基">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/09/5cabe977a04ec.png">
+<meta name="twitter:title" content="Laravel中Redis相关操作">
+<meta name="twitter:description" content="Redis是什么 redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种">
 
 
 
@@ -130,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://wuxiexie.github.io/Laravel-Basic">
+  <link rel="canonical" href="http://wuxiexie.github.io/2019/04/24/Laravel-Redis">
 
 
 
@@ -140,7 +138,7 @@
   };
 </script>
 
-  <title>Laravel基础知识 | 无邪's 博客</title>
+  <title>Laravel中Redis相关操作 | 无邪's 博客</title>
   
 
 
@@ -372,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuxiexie.github.io/Laravel-Basic">
+    <link itemprop="mainEntityOfPage" href="http://wuxiexie.github.io/2019/04/24/Laravel-Redis">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="无邪">
@@ -389,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Laravel基础知识
+          <h1 class="post-title" itemprop="name headline">Laravel中Redis相关操作
 
               
             
@@ -415,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-04-09 06:43:17" itemprop="dateCreated datePublished" datetime="2019-04-09T06:43:17+08:00">2019-04-09</time>
+              <time title="创建时间：2019-04-24 18:40:14" itemprop="dateCreated datePublished" datetime="2019-04-24T18:40:14+08:00">2019-04-24</time>
             
 
             
@@ -432,29 +430,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-08-24 12:12:18" itemprop="dateModified" datetime="2021-08-24T12:12:18+08:00">2021-08-24</time>
+                <time title="修改时间：2021-08-24 12:12:33" itemprop="dateModified" datetime="2021-08-24T12:12:33+08:00">2021-08-24</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -468,8 +448,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/Laravel-Basic#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Laravel-Basic" itemprop="commentCount"></span>
+                <a href="/2019/04/24/Laravel-Redis#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/24/Laravel-Redis" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,7 +471,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">847</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -505,7 +485,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -525,33 +505,27 @@
       
 
       
-        <h1 id="Laravel-简介"><a href="#Laravel-简介" class="headerlink" title="Laravel 简介"></a>Laravel 简介</h1><p>Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。<br>Laravel也是目前最为主流的PHP框架<br><a href="https://baike.baidu.com/item/Laravel/5996666" target="_blank" rel="noopener">点我进入百度百科</a></p>
-<h1 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h1><p>俗话说：男怕选错行，女怕嫁错郎。<br>一个程序的版本选择也一样决定命运<br>当前笔记以 Laravel 5.4 为基础开展<br>更多版本请查看<a href="https://laravel.com/" target="_blank" rel="noopener">Laravel官网</a></p>
-<h1 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h1><ul>
-<li>PHP版本 &gt;= 5.6.4</li>
-<li>PHP扩展：OpenSSL</li>
-<li>PHP扩展：PDO</li>
-<li>PHP扩展：Mbstring</li>
-<li>PHP扩展：Tokenizer</li>
-<li>PHP扩展：XML</li>
-</ul>
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>环境配置主要涉及PHP环境以及Composer依赖</p>
-<h2 id="PHP环境"><a href="#PHP环境" class="headerlink" title="PHP环境"></a>PHP环境</h2><p>笔者使用的环境是Windows，选用了<a href="http://phpstudy.php.cn/" target="_blank" rel="noopener">PhpStudy</a>来搭建集成开发环境<br>选用的Version为php-7.0.12-nts + Apache<br>最终项目上线使用的是Centos 7.3系统 利用<a href="http://www.bt.cn/" target="_blank" rel="noopener">宝塔面板</a>进行管理以及php环境的搭建</p>
-<h2 id="Composer安装"><a href="#Composer安装" class="headerlink" title="Composer安装"></a>Composer安装</h2><ol>
-<li>进入<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">Composer官网</a>选取适应自己系统的版本进行下载并安装<blockquote>
-<p>Windows系统可以直接下载并运行<a href="https://getcomposer.org/Composer-Setup.exe" target="_blank" rel="noopener">Composer-Setup.exe</a> 随后一直Next直至Finish即可</p>
+        <h1 id="Redis是什么"><a href="#Redis是什么" class="headerlink" title="Redis是什么"></a>Redis是什么</h1><blockquote>
+<p>redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。<br>Redis 是一个高性能的key-value数据库。 redis的出现，很大程度补偿了memcached这类key/value存储的不足，在部 分场合可以对关系数据库起到很好的补充作用。它提供了Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang等客户端，使用很方便。<br>Redis支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得Redis可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。同步对读取操作的可扩展性和数据冗余很有帮助。<br>redis的官网地址，非常好记，是redis.io。（特意查了一下，域名后缀io属于国家域名，是british Indian Ocean territory，即英属印度洋领地）</p>
 </blockquote>
-</li>
-<li>确认安装情况<br>打开命令提示符，输入命令 <code>composer -v</code><br>看到如图则代表安装成功<br><img src="https://i.loli.net/2019/04/09/5cabe977a04ec.png" alt="Composer"></li>
-</ol>
-<h1 id="安装-Laravel"><a href="#安装-Laravel" class="headerlink" title="安装 Laravel"></a>安装 Laravel</h1><h2 id="创建指定版本的Laravel项目"><a href="#创建指定版本的Laravel项目" class="headerlink" title="创建指定版本的Laravel项目"></a>创建指定版本的Laravel项目</h2><p>在要创建Laravel项目的目录下运行cmd或cd至创建目录下<br>例：创建一个版本为5.4的blog项目，使用以下命令<br><code>composer create-project --prefer-dist laravel/laravel blog 5.4.*</code></p>
-<h1 id="常用的文件目录"><a href="#常用的文件目录" class="headerlink" title="常用的文件目录"></a>常用的文件目录</h1><ul>
-<li>配置文件：<code>/.env</code></li>
-<li>css、Js：<code>/public/</code></li>
-<li>路由：<code>/routes/</code></li>
-<li>控制器： <code>/app/Http/Controllers/</code></li>
-<li>视图： <code>/resources/views/</code></li>
-</ul>
+<blockquote>
+<p>以上内容来自<a href="https://baike.baidu.com/item/Redis/6549233" target="_blank" rel="noopener">百度百科</a></p>
+</blockquote>
+<h1 id="Laravel中如何去安装Redis"><a href="#Laravel中如何去安装Redis" class="headerlink" title="Laravel中如何去安装Redis"></a>Laravel中如何去安装Redis</h1><h2 id="Composer安装"><a href="#Composer安装" class="headerlink" title="Composer安装"></a>Composer安装</h2><p><code>composer require predis/predis</code></p>
+<h2 id="配置Config文件"><a href="#配置Config文件" class="headerlink" title="配置Config文件"></a>配置Config文件</h2><p>应用的Redis配置位于配置文件 <strong>config/database.php</strong><br>这个文件中包含被应用使用的Redis服务器的Redis数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&apos;redis&apos; =&gt; [</span><br><span class="line"></span><br><span class="line">        &apos;client&apos; =&gt; &apos;predis&apos;,</span><br><span class="line"></span><br><span class="line">        &apos;default&apos; =&gt; [</span><br><span class="line">            &apos;host&apos; =&gt; env(&apos;REDIS_HOST&apos;, &apos;127.0.0.1&apos;),</span><br><span class="line">            &apos;password&apos; =&gt; env(&apos;REDIS_PASSWORD&apos;, null),</span><br><span class="line">            &apos;port&apos; =&gt; env(&apos;REDIS_PORT&apos;, 6379),</span><br><span class="line">            &apos;database&apos; =&gt; 0,</span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">    ],</span><br></pre></td></tr></table></figure></p>
+<p>如若是在本地环境中搭建的Redis服务器<br>默认不需要进行变更可以直接使用</p>
+<h1 id="Laravel中Redis常用的指令"><a href="#Laravel中Redis常用的指令" class="headerlink" title="Laravel中Redis常用的指令"></a>Laravel中Redis常用的指令</h1><h2 id="获取所有键"><a href="#获取所有键" class="headerlink" title="获取所有键"></a>获取所有键</h2><p><code>Redis::command(&#39;keys&#39;,[&#39;*&#39;]);</code></p>
+<h2 id="获取指定键值"><a href="#获取指定键值" class="headerlink" title="获取指定键值"></a>获取指定键值</h2><p><code>Redis::get(key_name)</code></p>
+<h2 id="设置键值"><a href="#设置键值" class="headerlink" title="设置键值"></a>设置键值</h2><p><code>Redis::set(key_name,value)</code></p>
+<h2 id="设置键值并且设定过期时间-单位-s"><a href="#设置键值并且设定过期时间-单位-s" class="headerlink" title="设置键值并且设定过期时间(单位:s)"></a>设置键值并且设定过期时间(单位:s)</h2><p><code>Redis::setex(key_name,timeout,value)</code></p>
+<h2 id="删除键值"><a href="#删除键值" class="headerlink" title="删除键值"></a>删除键值</h2><p><code>Redis::del(key_name)</code></p>
+<h2 id="add操作，不会覆盖已有值"><a href="#add操作，不会覆盖已有值" class="headerlink" title="add操作，不会覆盖已有值"></a>add操作，不会覆盖已有值</h2><p><code>Redis::setnx(key_name,value)</code><br>添加成功则返回<code>True</code><br>如果已经存在该键值则返回<code>False</code></p>
+<h2 id="自增自减-常用来计数"><a href="#自增自减-常用来计数" class="headerlink" title="自增自减 常用来计数"></a>自增自减 常用来计数</h2><p><code>Redis::incr(key_name)</code> 自增1<br><code>Reids::incrby(key_name,foot)</code> 自增foot</p>
+<h2 id="是否存在"><a href="#是否存在" class="headerlink" title="是否存在"></a>是否存在</h2><p><code>Redis::exists(key_name)</code></p>
+<h2 id="设置key的时效性-单位-s"><a href="#设置key的时效性-单位-s" class="headerlink" title="设置key的时效性(单位:s)"></a>设置key的时效性(单位:s)</h2><p><code>Redis::expire(key_name,timeout)</code></p>
+<h2 id="获取剩余有效期-单位-s"><a href="#获取剩余有效期-单位-s" class="headerlink" title="获取剩余有效期(单位:s)"></a>获取剩余有效期(单位:s)</h2><p><code>Redis::ttl(key_name)</code></p>
+<h2 id="重新设定为永久存储"><a href="#重新设定为永久存储" class="headerlink" title="重新设定为永久存储"></a>重新设定为永久存储</h2><p><code>Redis::persisit(key_name)</code></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>其实在Laravel中<br>Redis的实现命令与在原生PHP中的实现命令并无差异<br>但是在使用过程中的确更为方便</p>
 
       
     </div>
@@ -586,7 +560,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://wuxiexie.github.io/Laravel-Basic" title="Laravel基础知识">http://wuxiexie.github.io/Laravel-Basic</a>
+    <a href="http://wuxiexie.github.io/2019/04/24/Laravel-Redis" title="Laravel中Redis相关操作">http://wuxiexie.github.io/2019/04/24/Laravel-Redis</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -601,6 +575,8 @@
           
             <a href="/tags/Laravel/" rel="tag"># Laravel</a>
           
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
             <a href="/tags/PHP/" rel="tag"># PHP</a>
           
         </div>
@@ -614,14 +590,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/11/DeveloperInterview" rel="next" title="开发岗面试题知识">
+                <i class="fa fa-chevron-left"></i> 开发岗面试题知识
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/BiliBiliApi" rel="prev" title="BiliBiliApi">
-                BiliBiliApi <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/11/BiliBili-Av-Analysis" rel="prev" title="BiliBili稿件数据分析">
+                BiliBili稿件数据分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -870,7 +850,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-简介"><span class="nav-number">1.</span> <span class="nav-text">Laravel 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本选择"><span class="nav-number">2.</span> <span class="nav-text">版本选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境要求"><span class="nav-number">3.</span> <span class="nav-text">环境要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">4.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP环境"><span class="nav-number">4.1.</span> <span class="nav-text">PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer安装"><span class="nav-number">4.2.</span> <span class="nav-text">Composer安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Laravel"><span class="nav-number">5.</span> <span class="nav-text">安装 Laravel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建指定版本的Laravel项目"><span class="nav-number">5.1.</span> <span class="nav-text">创建指定版本的Laravel项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的文件目录"><span class="nav-number">6.</span> <span class="nav-text">常用的文件目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis是什么"><span class="nav-number">1.</span> <span class="nav-text">Redis是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel中如何去安装Redis"><span class="nav-number">2.</span> <span class="nav-text">Laravel中如何去安装Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer安装"><span class="nav-number">2.1.</span> <span class="nav-text">Composer安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Config文件"><span class="nav-number">2.2.</span> <span class="nav-text">配置Config文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel中Redis常用的指令"><span class="nav-number">3.</span> <span class="nav-text">Laravel中Redis常用的指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取所有键"><span class="nav-number">3.1.</span> <span class="nav-text">获取所有键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取指定键值"><span class="nav-number">3.2.</span> <span class="nav-text">获取指定键值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置键值"><span class="nav-number">3.3.</span> <span class="nav-text">设置键值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置键值并且设定过期时间-单位-s"><span class="nav-number">3.4.</span> <span class="nav-text">设置键值并且设定过期时间(单位:s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除键值"><span class="nav-number">3.5.</span> <span class="nav-text">删除键值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add操作，不会覆盖已有值"><span class="nav-number">3.6.</span> <span class="nav-text">add操作，不会覆盖已有值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自增自减-常用来计数"><span class="nav-number">3.7.</span> <span class="nav-text">自增自减 常用来计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#是否存在"><span class="nav-number">3.8.</span> <span class="nav-text">是否存在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置key的时效性-单位-s"><span class="nav-number">3.9.</span> <span class="nav-text">设置key的时效性(单位:s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取剩余有效期-单位-s"><span class="nav-number">3.10.</span> <span class="nav-text">获取剩余有效期(单位:s)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新设定为永久存储"><span class="nav-number">3.11.</span> <span class="nav-text">重新设定为永久存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
